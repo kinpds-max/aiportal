@@ -68,7 +68,9 @@ h1 {
 }
 
 .tools-panel {
-    flex: 0 0 500px; /* Fixed width for tools to ensure they show up */
+    flex: 0 0 380px; 
+    display: flex;
+    flex-direction: column;
 }
 
 .panel-content-scroll {
@@ -77,12 +79,13 @@ h1 {
     padding: 0.5rem;
 }
 
+
 .drive-panel {
-    flex: 1;
+    flex: 1; /* Share remaining space */
 }
 
 .trello-panel {
-    flex: 0 0 250px; /* Smaller height for bottom trello */
+    flex: 1; /* Share remaining space */
 }
 
 .panel-header-main {
