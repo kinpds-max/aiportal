@@ -2,11 +2,11 @@
 :root {
     --bg-color: #05070a;
     --card-bg: rgba(255, 255, 255, 0.05);
-    --card-hover: rgba(255, 255, 255, 0.08);
+    --card-hover: rgba(59, 130, 246, 0.15);
     --accent-primary: #3b82f6;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -18,98 +18,91 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.2;
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1;
     overflow-x: hidden;
     min-height: 100vh;
 }
 
 .container {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0.75rem;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0.5rem;
 }
 
 header {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    padding: 0 0.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid var(--glass-border);
+    gap: 1rem;
 }
 
 h1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 800;
-    background: linear-gradient(to right, #fff, var(--text-muted));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent-primary);
 }
 
-.header-subtitle {
-    display: none; /* Hide to save space */
-}
-
-/* Category Section - Ultra Compact */
-.category-section {
-    margin-bottom: 0.75rem;
-}
-
-.category-header {
-    margin-bottom: 0.4rem;
-    display: flex;
-    align-items: center;
-}
-
-.category-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    text-transform: uppercase;
+.ver-tag {
+    font-size: 0.6rem;
     color: var(--text-muted);
 }
 
-.category-title i {
-    color: var(--accent-primary);
-    font-size: 0.8rem;
+/* Category Row - The key for 1-screen view */
+.category-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: 0.1rem;
 }
 
-/* Tools Grid - Ultra Compact */
+.category-header {
+    flex: 0 0 100px; /* Fixed category width */
+}
+
+.category-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* Tools Grid - Horizontally packed */
 .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 0.4rem;
+    display: flex;
+    flex-wrap: wrap; /* Wrap if needed, but stay tight */
+    gap: 0.25rem;
+    flex: 1;
 }
 
-/* Tool Card - Row Style for compaction */
+/* Horizontal Compact Tool Card */
 .tool-card {
     background: var(--card-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 0.5rem;
-    padding: 0.4rem 0.6rem;
-    transition: all 0.15s ease;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
     text-decoration: none;
     color: inherit;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
+    transition: all 0.1s ease;
+    min-width: 80px;
 }
 
 .tool-card:hover {
     background: var(--card-hover);
     border-color: var(--accent-primary);
-    transform: translateY(-1px);
+    transform: scale(1.02);
 }
 
 .tool-icon-wrapper {
-    width: 24px;
-    height: 24px;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.03);
+    width: 16px;
+    height: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,41 +110,25 @@ h1 {
 }
 
 .tool-icon-wrapper i {
-    font-size: 0.85rem;
-}
-
-.tool-info {
-    flex: 1;
-    min-width: 0;
+    font-size: 0.7rem;
 }
 
 .tool-name {
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color: #e2e8f0;
 }
 
-/* Footer - Hidden or Mini */
-footer {
-    display: none;
-}
+/* Footer - Hidden */
+footer { display: none; }
 
-/* Scrollbar Minimalist */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: var(--glass-border);
-    border-radius: 10px;
-}
+/* Custom Scrollbar */
+::-webkit-scrollbar { height: 4px; width: 0; }
+::-webkit-scrollbar-thumb { background: var(--accent-primary); }
 
-/* Responsive */
-@media (max-width: 480px) {
-    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 600px) {
+    .category-section { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+    .category-header { flex: none; }
+    .tools-grid { width: 100%; }
 }
