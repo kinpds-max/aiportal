@@ -1,27 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.tool-card');
     
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
     cards.forEach(card => {
-        // Initial state set in CSS animation fadeIn, but observer can help with scroll
-        // observer.observe(card);
-    });
-
-    // Simple interaction feedback
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            // Can add sound or extra micro-animations here
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const url = card.getAttribute('href');
+            
+            // Force open in a new window with features (Modern browsers treat this as a separate window)
+            const windowFeatures = 'toolbar=yes,location=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width=1400,height=900';
+            window.open(url, '_blank', windowFeatures);
         });
     });
+
+    console.log('Hamom AI Portal v2.5: Forcing New Window Mode');
 });
