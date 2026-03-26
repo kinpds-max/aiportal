@@ -13,20 +13,13 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="dashboard-wrapper">
+    <div class="container">
         <header>
             <h1>Hamom AI Portal | 하맘컨텐츠 1660-1195</h1>
         </header>
 
-        <div class="layout-grid">
-            <!-- Left Panel: Tools -->
-            <aside class="panel tools-panel">
-                <div class="panel-header-main">
-                    <h2><i class="fa-solid fa-toolbox"></i> 툴</h2>
-                </div>
-                <div class="panel-content-scroll">
-                    <main id="main-content">
-                        <!-- 기존 카테고리들 ... -->
+        <main id="main-content">
+            <!-- 채팅 Category -->
                         <section class="category-section">
                             <div class="category-header">
                                 <h2 class="category-title"><i class="fa-solid fa-comments"></i> 채팅</h2>
@@ -101,10 +94,13 @@
                         </section>
 
                         <section class="category-section">
+
                             <div class="category-header">
                                 <h2 class="category-title"><i class="fa-solid fa-layer-group"></i> 기타</h2>
                             </div>
                             <div class="tools-grid">
+                                <a href="https://drive.google.com/drive/u/2/my-drive" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=drive.google.com&sz=64" alt="Google Drive"></div><span class="tool-name">구글드라이브</span></a>
+                                <a href="https://trello.com/b/SzwyFW3E/%EA%B9%80%EB%8F%99%ED%98%84-%ED%95%A0%EC%9D%BC" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=trello.com&sz=64" alt="Trello"></div><span class="tool-name">트렐로</span></a>
                                 <a href="https://www.ilovepdf.com/ko" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=ilovepdf.com&sz=64" alt="iLovePDF"></div><span class="tool-name">아이러브PDF</span></a>
                                 <a href="https://convertio.co/kr/jpg-ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=convertio.co&sz=64" alt="Convertio"></div><span class="tool-name">AI확장자변경</span></a>
                                 <a href="https://kmong.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=kmong.com&sz=64" alt="Kmong"></div><span class="tool-name">크몽</span></a>
@@ -127,30 +123,7 @@
                                 <a href="https://www.youtube.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt="YouTube"></div><span class="tool-name">유튜브</span></a>
                             </div>
                         </section>
-                    </main>
-                </div>
-            </aside>
-
-            <!-- Right Panel: Google Drive -->
-            <section class="panel drive-panel">
-                <div class="panel-header-main">
-                    <h2><i class="fa-brands fa-google-drive"></i> 구글 드라이브</h2>
-                </div>
-                <div class="iframe-container">
-                    <iframe src="https://drive.google.com/drive/u/2/my-drive" allow="autoplay" title="Google Drive"></iframe>
-                </div>
-            </section>
-
-            <!-- Middle/Right Panel: Trello (Moved here for 3-split) -->
-            <section class="panel trello-panel">
-                <div class="panel-header-main">
-                    <h2><i class="fa-brands fa-trello"></i> 트렐로 (할 일)</h2>
-                </div>
-                <div class="iframe-container">
-                    <iframe src="https://trello.com/b/SzwyFW3E/%EA%B9%80%EB%8F%99%ED%98%84-%ED%95%A0%EC%9D%BC" title="Trello"></iframe>
-                </div>
-            </section>
-        </div>
+        </main>
     </div>
 </body>
 </html>
