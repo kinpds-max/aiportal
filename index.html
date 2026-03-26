@@ -13,206 +13,145 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
+    <div class="dashboard-wrapper">
         <header>
             <h1>Hamom AI Portal | 하맘컨텐츠 1660-1195</h1>
         </header>
 
-        <main id="main-content">
-            <!-- 채팅 AI (LLMs Chat) -->
-            <section class="category-section">
-                <div class="category-header">
-                    <h2 class="category-title"><i class="fa-solid fa-comments"></i> 채팅 AI</h2>
+        <div class="layout-grid">
+            <!-- Left Panel: Tools -->
+            <aside class="panel tools-panel">
+                <div class="panel-header-main">
+                    <h2><i class="fa-solid fa-toolbox"></i> 툴</h2>
                 </div>
-                <div class="tools-grid">
-                    <a href="https://chatgpt.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT"></div>
-                        <span class="tool-name">쳇쥐피티</span>
-                    </a>
-                    <a href="https://gemini.google.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div>
-                        <span class="tool-name">제미나이</span>
-                    </a>
-                    <a href="https://www.genspark.ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=genspark.ai&sz=64" alt="Genspark"></div>
-                        <span class="tool-name">젠스파크</span>
-                    </a>
-                    <a href="https://x.com/i/grok" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="Grok"></div>
-                        <span class="tool-name">그록</span>
-                    </a>
-                    <a href="https://claude.ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt="Claude"></div>
-                        <span class="tool-name">클로드</span>
-                    </a>
-                    <a href="https://www.perplexity.ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" alt="Perplexity"></div>
-                        <span class="tool-name">퍼플렉시티</span>
-                    </a>
-                    <a href="https://wrtn.ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=wrtn.ai&sz=64" alt="Wrtn"></div>
-                        <span class="tool-name">뤼튼</span>
-                    </a>
-                    <a href="https://translate.google.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=translate.google.com&sz=64" alt="Google Translate"></div>
-                        <span class="tool-name">구글번역</span>
-                    </a>
-                </div>
-            </section>
+                <div class="panel-content-scroll">
+                    <main id="main-content">
+                        <!-- 기존 카테고리들 ... -->
+                        <section class="category-section">
+                            <div class="category-header">
+                                <h2 class="category-title"><i class="fa-solid fa-comments"></i> 채팅</h2>
+                            </div>
+                            <div class="tools-grid">
+                                <a href="https://chatgpt.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT"></div><span class="tool-name">쳇쥐피티</span></a>
+                                <a href="https://gemini.google.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div><span class="tool-name">제미나이</span></a>
+                                <a href="https://www.genspark.ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=genspark.ai&sz=64" alt="Genspark"></div><span class="tool-name">젠스파크</span></a>
+                                <a href="https://x.com/i/grok" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="Grok"></div><span class="tool-name">그록</span></a>
+                                <a href="https://claude.ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt="Claude"></div><span class="tool-name">클로드</span></a>
+                                <a href="https://www.perplexity.ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64" alt="Perplexity"></div><span class="tool-name">퍼플렉시티</span></a>
+                                <a href="https://wrtn.ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=wrtn.ai&sz=64" alt="Wrtn"></div><span class="tool-name">뤼튼</span></a>
+                                <a href="https://translate.google.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=translate.google.com&sz=64" alt="Google Translate"></div><span class="tool-name">구글번역</span></a>
+                            </div>
+                        </section>
 
-            <!-- 디자인 (Design) -->
-            <section class="category-section">
-                <div class="category-header">
-                    <h2 class="category-title"><i class="fa-solid fa-palette"></i> 디자인</h2>
-                </div>
-                <div class="tools-grid">
-                    <a href="https://chatgpt.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT"></div>
-                        <span class="tool-name">쳇쥐피티</span>
-                    </a>
-                    <a href="https://gemini.google.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div>
-                        <span class="tool-name">제미나이</span>
-                    </a>
-                    <a href="https://www.genspark.ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=genspark.ai&sz=64" alt="Genspark"></div>
-                        <span class="tool-name">젠스파크</span>
-                    </a>
-                    <a href="https://x.com/i/grok" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="Grok"></div>
-                        <span class="tool-name">그록</span>
-                    </a>
-                    <a href="https://claude.ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt="Claude"></div>
-                        <span class="tool-name">클로드</span>
-                    </a>
-                    <a href="https://www.midjourney.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=64" alt="Midjourney"></div>
-                        <span class="tool-name">미드저니</span>
-                    </a>
-                    <a href="https://gamma.app/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gamma.app&sz=64" alt="Gamma"></div>
-                        <span class="tool-name">감마</span>
-                    </a>
-                    <a href="https://www.sixshop.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=sixshop.com&sz=64" alt="Sixshop"></div>
-                        <span class="tool-name">식스샵</span>
-                    </a>
-                    <a href="https://www.figma.com/ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=figma.com&sz=64" alt="Figma"></div>
-                        <span class="tool-name">피그마AI</span>
-                    </a>
-                    <a href="https://labs.google/stitch/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=labs.google&sz=64" alt="Stitch"></div>
-                        <span class="tool-name">스티치</span>
-                    </a>
-                </div>
-            </section>
+                        <section class="category-section">
+                            <div class="category-header"><h2 class="category-title"><i class="fa-solid fa-palette"></i> 디자인</h2></div>
+                            <div class="tools-grid">
+                                <a href="https://chatgpt.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT"></div><span class="tool-name">쳇쥐피티</span></a>
+                                <a href="https://gemini.google.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div><span class="tool-name">제미나이</span></a>
+                                <a href="https://www.genspark.ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=genspark.ai&sz=64" alt="Genspark"></div><span class="tool-name">젠스파크</span></a>
+                                <a href="https://x.com/i/grok" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="Grok"></div><span class="tool-name">그록</span></a>
+                                <a href="https://claude.ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=64" alt="Claude"></div><span class="tool-name">클로드</span></a>
+                                <a href="https://www.midjourney.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=64" alt="Midjourney"></div><span class="tool-name">미드저니</span></a>
+                                <a href="https://gamma.app/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gamma.app&sz=64" alt="Gamma"></div><span class="tool-name">감마</span></a>
+                                <a href="https://www.sixshop.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=sixshop.com&sz=64" alt="Sixshop"></div><span class="tool-name">식스샵</span></a>
+                                <a href="https://www.figma.com/ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=figma.com&sz=64" alt="Figma"></div><span class="tool-name">피그마AI</span></a>
+                                <a href="https://labs.google/stitch/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=labs.google&sz=64" alt="Stitch"></div><span class="tool-name">스티치</span></a>
+                            </div>
+                        </section>
 
-            <!-- 영상 (Movie) -->
-            <section class="category-section">
-                <div class="category-header">
-                    <h2 class="category-title"><i class="fa-solid fa-video"></i> 영상</h2>
-                </div>
-                <div class="tools-grid">
-                    <a href="https://higgsfield.ai/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=64" alt="Higgsfield"></div>
-                        <span class="tool-name">힉스필드</span>
-                    </a>
-                    <a href="https://www.freepik.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=freepik.com&sz=64" alt="Freepik"></div>
-                        <span class="tool-name">프리픽</span>
-                    </a>
-                    <a href="https://labs.google/flow/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=labs.google&sz=64" alt="Google Flow"></div>
-                        <span class="tool-name">구글플로우</span>
-                    </a>
-                    <a href="https://gemini.google.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div>
-                        <span class="tool-name">제미나이</span>
-                    </a>
-                    <a href="https://x.com/i/grok" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="Grok"></div>
-                        <span class="tool-name">그록</span>
-                    </a>
-                    <a href="https://www.youtube.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt="YouTube"></div>
-                        <span class="tool-name">유튜브</span>
-                    </a>
-                </div>
-            </section>
+                        <section class="category-section">
+                            <div class="category-header"><h2 class="category-title"><i class="fa-solid fa-video"></i> 영상</h2></div>
+                            <div class="tools-grid">
+                                <a href="https://higgsfield.ai/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=64" alt="Higgsfield"></div><span class="tool-name">힉스필드</span></a>
+                                <a href="https://www.freepik.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=freepik.com&sz=64" alt="Freepik"></div><span class="tool-name">프리픽</span></a>
+                                <a href="https://labs.google/flow/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=labs.google&sz=64" alt="Google Flow"></div><span class="tool-name">구글플로우</span></a>
+                                <a href="https://gemini.google.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div><span class="tool-name">제미나이</span></a>
+                                <a href="https://x.com/i/grok" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=x.com&sz=64" alt="Grok"></div><span class="tool-name">그록</span></a>
+                                <a href="https://www.youtube.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt="YouTube"></div><span class="tool-name">유튜브</span></a>
+                            </div>
+                        </section>
 
-            <!-- 음악 (Music) -->
-            <section class="category-section">
-                <div class="category-header">
-                    <h2 class="category-title"><i class="fa-solid fa-music"></i> 음악</h2>
-                </div>
-                <div class="tools-grid">
-                    <a href="https://suno.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=suno.com&sz=64" alt="Suno"></div>
-                        <span class="tool-name">수노</span>
-                    </a>
-                    <a href="https://gemini.google.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div>
-                        <span class="tool-name">제미나이</span>
-                    </a>
-                </div>
-            </section>
+                        <section class="category-section">
+                            <div class="category-header"><h2 class="category-title"><i class="fa-solid fa-music"></i> 음악</h2></div>
+                            <div class="tools-grid">
+                                <a href="https://suno.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=suno.com&sz=64" alt="Suno"></div><span class="tool-name">수노</span></a>
+                                <a href="https://gemini.google.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div><span class="tool-name">제미나이</span></a>
+                            </div>
+                        </section>
 
-            <!-- 생산성 (Productivity) -->
-            <section class="category-section">
-                <div class="category-header">
-                    <h2 class="category-title"><i class="fa-solid fa-briefcase"></i> 생산성</h2>
-                </div>
-                <div class="tools-grid">
-                    <a href="file:///C:/Users/user/AppData/Local/Programs/Antigravity/Antigravity.exe" class="tool-card">
-                        <div class="tool-icon-wrapper"><i class="fa-solid fa-user-astronaut" style="color: #a855f7;"></i></div>
-                        <span class="tool-name">Antigravity</span>
-                    </a>
-                    <a href="https://notebooklm.google.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64" alt="NotebookLM"></div>
-                        <span class="tool-name">노트북LM</span>
-                    </a>
-                    <a href="https://gemini.google.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div>
-                        <span class="tool-name">제미나이</span>
-                    </a>
-                    <a href="https://www.canva.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt="Canva"></div>
-                        <span class="tool-name">캔바</span>
-                    </a>
-                    <a href="https://www.cursor.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=cursor.com&sz=64" alt="Cursor"></div>
-                        <span class="tool-name">커서</span>
-                    </a>
-                </div>
-            </section>
+                        <section class="category-section">
+                            <div class="category-header"><h2 class="category-title"><i class="fa-solid fa-briefcase"></i> 생산성</h2></div>
+                            <div class="tools-grid">
+                                <a href="file:///C:/Users/user/AppData/Local/Programs/Antigravity/Antigravity.exe" class="tool-card"><div class="tool-icon-wrapper"><i class="fa-solid fa-user-astronaut" style="color: #a855f7;"></i></div><span class="tool-name">Antigravity</span></a>
+                                <a href="https://notebooklm.google.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=64" alt="NotebookLM"></div><span class="tool-name">노트북LM</span></a>
+                                <a href="https://gemini.google.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini"></div><span class="tool-name">제미나이</span></a>
+                                <a href="https://www.canva.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt="Canva"></div><span class="tool-name">캔바</span></a>
+                                <a href="https://www.cursor.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=cursor.com&sz=64" alt="Cursor"></div><span class="tool-name">커서</span></a>
+                            </div>
+                        </section>
 
-            <!-- CUT (Editing Tool) -->
-            <section class="category-section">
-                <div class="category-header">
-                    <h2 class="category-title"><i class="fa-solid fa-scissors"></i> CUT</h2>
+                        <section class="category-section">
+                            <div class="category-header"><h2 class="category-title"><i class="fa-solid fa-scissors"></i> 편집</h2></div>
+                            <div class="tools-grid">
+                                <a href="https://www.capcut.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=capcut.com&sz=64" alt="CapCut"></div><span class="tool-name">캡컷</span></a>
+                                <a href="https://vrew.voyagerx.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=vrew.voyagerx.com&sz=64" alt="Vrew"></div><span class="tool-name">브루</span></a>
+                                <a href="https://www.canva.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt="Canva"></div><span class="tool-name">캔바</span></a>
+                                <a href="https://www.miricanvas.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=miricanvas.com&sz=64" alt="MiriCanvas"></div><span class="tool-name">미리캔버스</span></a>
+                            </div>
+                        </section>
+
+                        <!-- SNS Category Added -->
+                        <section class="category-section">
+                            <div class="category-header">
+                                <h2 class="category-title"><i class="fa-solid fa-share-nodes"></i> SNS</h2>
+                            </div>
+                            <div class="tools-grid">
+                                <a href="https://www.instagram.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" alt="Instagram"></div><span class="tool-name">인스타그램</span></a>
+                                <a href="https://www.facebook.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=facebook.com&sz=64" alt="Facebook"></div><span class="tool-name">페이스북</span></a>
+                                <a href="https://www.threads.net/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=threads.net&sz=64" alt="Threads"></div><span class="tool-name">쓰레드</span></a>
+                                <a href="https://section.blog.naver.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=naver.com&sz=64" alt="Naver Blog"></div><span class="tool-name">블로그</span></a>
+                                <a href="https://section.cafe.naver.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=naver.com&sz=64" alt="Naver Cafe"></div><span class="tool-name">카페</span></a>
+                                <a href="https://www.youtube.com/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt="YouTube"></div><span class="tool-name">유튜브</span></a>
+                            </div>
+                        </section>
+                    </main>
                 </div>
-                <div class="tools-grid">
-                    <a href="https://www.capcut.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=capcut.com&sz=64" alt="CapCut"></div>
-                        <span class="tool-name">캡컷</span>
-                    </a>
-                    <a href="https://vrew.voyagerx.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=vrew.voyagerx.com&sz=64" alt="Vrew"></div>
-                        <span class="tool-name">브루</span>
-                    </a>
-                    <a href="https://www.canva.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=64" alt="Canva"></div>
-                        <span class="tool-name">캔바</span>
-                    </a>
-                    <a href="https://www.miricanvas.com/" class="tool-card">
-                        <div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=miricanvas.com&sz=64" alt="MiriCanvas"></div>
-                        <span class="tool-name">미리캔버스</span>
-                    </a>
+            </aside>
+
+            <!-- Right Panel: Google Drive -->
+            <section class="panel drive-panel">
+                <div class="panel-header-main">
+                    <h2><i class="fa-brands fa-google-drive"></i> 구글 드라이브</h2>
+                </div>
+                <div class="iframe-container">
+                    <iframe src="https://drive.google.com/drive/u/2/my-drive" allow="autoplay" title="Google Drive"></iframe>
+                    <div class="iframe-overlay">
+                        <div class="overlay-content">
+                            <i class="fa-brands fa-google-drive"></i>
+                            <p>구글 드라이브 보안 정책상<br>화면 내 직접 표시는 제한될 수 있습니다.</p>
+                            <a href="https://drive.google.com/drive/u/2/my-drive" target="_blank" class="btn-open-new">새 창에서 열기</a>
+                        </div>
+                    </div>
                 </div>
             </section>
-        </main>
+        </div>
+
+        <!-- Bottom Panel: Trello -->
+        <footer class="panel trello-panel">
+            <div class="panel-header-main">
+                <h2><i class="fa-brands fa-trello"></i> 트렐로 (할 일)</h2>
+            </div>
+            <div class="iframe-container">
+                <iframe src="https://trello.com/b/SzwyFW3E/%EA%B9%80%EB%8F%99%ED%98%84-%ED%95%A0%EC%9D%BC" title="Trello"></iframe>
+                <div class="iframe-overlay">
+                    <div class="overlay-content">
+                        <i class="fa-brands fa-trello"></i>
+                        <p>트렐로 화면을 불러오는 중입니다.</p>
+                        <a href="https://trello.com/b/SzwyFW3E/%EA%B9%80%EB%8F%99%ED%98%84-%ED%95%A0%EC%9D%BC" target="_blank" class="btn-open-new">트렐로 새 창에서 열기</a>
+                    </div>
+                </div>
+            </footer>
+    </div>
     </div>
 </body>
 </html>
