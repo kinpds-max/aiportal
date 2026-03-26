@@ -37,15 +37,17 @@ body {
     padding: 0;
 }
 
-header {
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--accent-primary);
+footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--accent-primary);
+    text-align: right;
 }
 
-header h1 {
-    font-size: 1.2rem;
+footer h1 {
+    font-size: 1rem;
     font-weight: 800;
+    color: var(--text-muted);
 }
 
 main {
@@ -59,7 +61,7 @@ main {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 0.6rem;
-    position: relative; /* For absolute title positioning */
+    position: relative;
     min-width: 250px;
     flex: 1 1 auto;
     display: flex;
@@ -69,31 +71,36 @@ main {
 
 .category-header {
     position: absolute;
-    bottom: 0.3rem;
-    right: 0.6rem;
+    bottom: -10px; /* Overlap slightly */
+    right: 5px;
     padding: 0;
     border: none;
-    z-index: 5;
-    opacity: 0.6;
+    z-index: 10;
 }
 
 .category-title {
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: var(--text-muted);
+    font-size: 0.8rem; /* Slightly larger for visibility */
+    font-weight: 900;
+    color: #000;
     text-transform: uppercase;
+    background: #ccff00; /* Fluorescent highlighter */
+    padding: 2px 8px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    transform: rotate(-1deg);
+    display: inline-block;
 }
 
 .category-title i {
-    font-size: 0.7rem;
-    margin-right: 0.2rem;
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
 }
 
 .tools-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
-    padding-bottom: 0.8rem; /* Space for the title */
+    padding-bottom: 1rem; /* Space for the floating title */
 }
 
 /* Hyper-Compact Tool Card */
