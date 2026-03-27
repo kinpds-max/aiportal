@@ -327,7 +327,7 @@ footer h1 {
 }
 
 /* Memo Lock Style */
-.memo-locked textarea {
+.memo-locked {
     filter: blur(8px);
     pointer-events: none;
     user-select: none;

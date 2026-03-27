@@ -98,10 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Elements to unlock
     const challengeSec = document.getElementById('challenge-section');
     const educationSec = document.getElementById('education-section');
-    const memoContainer = document.getElementById('memo-container');
+    const memoInnerContent = document.getElementById('memo-inner-content');
     const memoUnlockOverlay = document.getElementById('memo-unlock-overlay');
     const unlockMemoBtn = document.getElementById('unlock-memo-btn');
-    const memoWrapper = document.getElementById('memo-container-wrapper');
+    const memoCalendarWrapper = document.getElementById('memo-calendar-unlock-wrapper');
 
     let currentAction = null; // 'all', 'education', 'memo'
 
@@ -127,14 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const unlockMemo = () => {
-        memoContainer.classList.remove('memo-locked');
-        if (memoWrapper) memoWrapper.classList.remove('locked-section');
+        if (memoInnerContent) memoInnerContent.classList.remove('memo-locked');
+        if (memoCalendarWrapper) memoCalendarWrapper.classList.remove('locked-section');
         if (memoUnlockOverlay) memoUnlockOverlay.style.display = 'none';
     };
 
     const lockMemo = () => {
-        memoContainer.classList.add('memo-locked');
-        if (memoWrapper) memoWrapper.classList.add('locked-section');
+        if (memoInnerContent) memoInnerContent.classList.add('memo-locked');
+        if (memoCalendarWrapper) memoCalendarWrapper.classList.add('locked-section');
         if (memoUnlockOverlay) memoUnlockOverlay.style.display = 'block';
     };
 
