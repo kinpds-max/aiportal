@@ -87,4 +87,95 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
     }
+
+    // --- Lock & Password Logic ---
+    const CORRECT_PASSWORD = '1191004'; 
+    const modal = document.getElementById('password-modal');
+    const passwordInput = document.getElementById('password-input');
+    const passwordSubmit = document.getElementById('password-submit');
+    const modalMsg = document.getElementById('modal-msg');
+    
+    // Elements to unlock
+    const challengeSec = document.getElementById('challenge-section');
+    const educationSec = document.getElementById('education-section');
+    const memoContainer = document.getElementById('memo-container');
+    const lockMemoBtn = document.getElementById('lock-memo');
+
+    let currentAction = null; // 'initial' or 'memo'
+
+    const openModal = (action, message) => {
+        currentAction = action;
+        modalMsg.textContent = message;
+        passwordInput.value = '';
+        modal.style.display = 'flex';
+        passwordInput.focus();
+    };
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+        passwordInput.value = '';
+    };
+
+    const unlockMain = () => {
+        challengeSec.classList.remove('locked-section');
+        challengeSec.classList.add('unlocked-section');
+        educationSec.classList.remove('locked-section');
+        educationSec.classList.add('unlocked-section');
+    };
+
+    const unlockMemo = () => {
+        memoContainer.classList.remove('memo-locked');
+        lockMemoBtn.innerHTML = '<i class="fa-solid fa-unlock"></i> 잠금 (활성)';
+        lockMemoBtn.style.background = '#a855f7'; // Purple-ish to match Antigravity
+    };
+
+    const lockMemo = () => {
+        memoContainer.classList.add('memo-locked');
+        lockMemoBtn.innerHTML = '<i class="fa-solid fa-lock"></i> 잠금해제';
+        lockMemoBtn.style.background = '#64748b';
+    };
+
+    // Initial state for memo button
+    lockMemo();
+
+    // Initial check on load
+    openModal('initial', '도전 및 교육 섹션에 접근하려면 비밀번호가 필요합니다.');
+
+    // Lock button click
+    lockMemoBtn.addEventListener('click', () => {
+        if (memoContainer.classList.contains('memo-locked')) {
+            openModal('memo', '메모장 잠금을 해제하려면 비밀번호를 입력하세요.');
+        } else {
+            lockMemo();
+        }
+    });
+
+    // Password submission
+    const handlePasswordSubmit = () => {
+        const input = passwordInput.value;
+        if (input === CORRECT_PASSWORD) {
+            if (currentAction === 'initial') {
+                unlockMain();
+                alert('비밀번호가 확인되었습니다. 도전/교육 섹션이 활성화됩니다.');
+            } else if (currentAction === 'memo') {
+                unlockMemo();
+            }
+            closeModal();
+        } else {
+            alert('비밀번호가 틀렸습니다. 다시 시도해 주세요.');
+            passwordInput.value = '';
+        }
+    };
+
+    passwordSubmit.addEventListener('click', handlePasswordSubmit);
+    passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handlePasswordSubmit();
+    });
+
+    // Close modal if clicking outside content
+    window.addEventListener('click', (e) => {
+        if (e.target === modal && currentAction !== 'initial') {
+            closeModal();
+        }
+    });
 });

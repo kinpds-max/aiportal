@@ -16,7 +16,7 @@
     <div class="container">
         <main id="main-content">
             <!-- 도전 Category (Renamed from 즐겨찾기) -->
-            <section class="category-section">
+            <section id="challenge-section" class="category-section locked-section">
                 <div class="category-header"><h2 class="category-title"><i class="fa-solid fa-trophy"></i> 도전</h2></div>
                 <div class="tools-grid">
                     <a href="https://www.k-startup.go.kr/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=k-startup.go.kr&sz=64" alt="K-Startup"></div><span class="tool-name">정책자금</span></a>
@@ -152,7 +152,7 @@
             </div>
 
             <!-- 교육 Category (Move to Bottom) -->
-            <section class="category-section">
+            <section id="education-section" class="category-section locked-section">
                 <div class="category-header"><h2 class="category-title"><i class="fa-solid fa-graduation-cap"></i> 교육</h2></div>
                 <div class="tools-grid">
                     <a href="https://vibe-block.vercel.app/" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=vercel.app&sz=64" alt="VibeBlock"></div><span class="tool-name">바이브블록</span></a>
@@ -178,10 +178,11 @@
                     <h2 class="memo-title"><i class="fa-solid fa-note-sticky"></i> 메모장</h2>
                     <div class="memo-controls" style="display: flex; align-items: center; gap: 1rem;">
                         <span id="last-saved" class="last-saved-time" style="font-size: 0.75rem; color: var(--text-muted);"></span>
+                        <button id="lock-memo" class="save-btn" style="background: #64748b;"><i class="fa-solid fa-lock"></i> 잠금</button>
                         <button id="save-memo" class="save-btn"><i class="fa-solid fa-floppy-disk"></i> 저장</button>
                     </div>
                 </div>
-                <div class="memo-grid">
+                <div id="memo-container" class="memo-grid memo-locked">
                     <div class="memo-column">
                         <h3>해야할일</h3>
                         <textarea id="todo-memo" placeholder="할 일을 입력하세요..."></textarea>
@@ -200,6 +201,18 @@
         <footer>
             <h1>Hamom AI Portal | 하맘컨텐츠 1660-1195</h1>
         </footer>
+    </div>
+
+    <!-- Password Modal -->
+    <div id="password-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3><i class="fa-solid fa-lock"></i> 비밀번호 입력</h3>
+            <p id="modal-msg">접근하려면 비밀번호를 입력하세요.</p>
+            <input type="password" id="password-input" placeholder="비밀번호">
+            <div class="modal-actions">
+                <button id="password-submit">확인</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
