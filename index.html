@@ -192,12 +192,8 @@
                 </div>
 
                 <div id="memo-calendar-unlock-wrapper" class="locked-section" style="position: relative;">
-                    <div id="memo-unlock-overlay" class="section-controls" style="left: 50%; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                    <div id="memo-unlock-overlay" class="section-controls" style="left: 50%;">
                         <button id="unlock-memo-btn" class="unlock-btn"><i class="fa-solid fa-lock"></i> 잠금해제</button>
-                        <p class="lock-notice" style="font-size: 0.85rem; color: var(--text-main); text-align: center; background: rgba(255,255,255,0.9); padding: 0.6rem 1.2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; line-height: 1.5; font-weight: 700; width: max-content;">
-                            맨아래에 하맘대표님의 개인사생활부분이 있어서 블러처리되었습니다.<br>
-                            비밀번호 입력시 해제가 됩니다
-                        </p>
                     </div>
 
                     <div id="memo-inner-content" class="memo-locked">
@@ -258,6 +254,12 @@
                             <div id="calendar-wrapper" class="calendar-wrapper">
                                 <!-- Calendar table will be generated here -->
                             </div>
+
+                            <!-- New Bottom Notice -->
+                            <p class="bottom-privacy-notice" style="margin-top: 2rem; padding: 1rem; text-align: center; border-top: 1px solid #f1f5f9; font-size: 0.9rem; font-weight: 800; color: var(--text-muted); line-height: 1.6;">
+                                하맘대표님의 개인사생활부분이 있어서 블러처리 되었습니다.<br>
+                                비밀번호 입력시 해제가 됩니다.
+                            </p>
                         </div>
                     </div>
                 </div>

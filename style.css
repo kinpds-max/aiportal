@@ -636,4 +636,25 @@ footer h1 {
     .calendar-input-group input[type="text"] {
         width: 100%;
     }
+    /* Mobile Calendar Responsive Fix */
+    .calendar-table {
+        min-width: 100%;
+        table-layout: fixed;
+    }
+    .calendar-day {
+        height: auto;
+        min-height: 50px;
+    }
+    .calendar-table th, .calendar-table td {
+        padding: 0.3rem 0.1rem;
+        font-size: 0.7rem;
+    }
+    .day-number {
+        font-size: 0.65rem;
+    }
+    .calendar-event {
+        font-size: 0.6rem;
+        padding: 1px 3px;
+        line-height: 1.2;
+    }
 }
