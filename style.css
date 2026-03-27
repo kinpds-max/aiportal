@@ -171,9 +171,13 @@ footer h1 {
 /* Category Grouping */
 .category-group {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Keep side-by-side on desktop */
     gap: 0.75rem;
     flex: 1 1 500px;
+}
+
+@media (max-width: 600px) {
+    .category-group { flex-wrap: wrap; }
 }
 
 /* Memo Section */
