@@ -179,28 +179,63 @@
                     <a href="https://youtu.be/fqLgBHTE8bc" class="tool-card"><div class="tool-icon-wrapper"><img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt="YouTube"></div><span class="tool-name">다움</span></a>
                 </div>
             </section>
-            <!-- 메모장 Section -->
             <section class="memo-section">
                 <div class="memo-header">
                     <h2 class="memo-title"><i class="fa-solid fa-note-sticky"></i> 메모장</h2>
                     <div class="memo-controls" style="display: flex; align-items: center; gap: 1rem;">
                         <span id="last-saved" class="last-saved-time" style="font-size: 0.75rem; color: var(--text-muted);"></span>
-                        <button id="lock-memo" class="save-btn" style="background: #64748b;"><i class="fa-solid fa-lock"></i> 잠금</button>
                         <button id="save-memo" class="save-btn"><i class="fa-solid fa-floppy-disk"></i> 저장</button>
                     </div>
                 </div>
-                <div id="memo-container" class="memo-grid memo-locked">
-                    <div class="memo-column">
-                        <h3>해야할일</h3>
-                        <textarea id="todo-memo" placeholder="할 일을 입력하세요..."></textarea>
+
+                <!-- D-Day Display Area (Above Notepad) -->
+                <div id="d-day-container" class="d-day-display-area">
+                    <div class="d-day-row urgent">
+                        <span class="d-day-label">긴급</span>
+                        <div id="urgent-d-day-list" class="d-day-list">등록된 긴급 일정이 없습니다.</div>
                     </div>
-                    <div class="memo-column">
-                        <h3>급한일</h3>
-                        <textarea id="urgent-memo" placeholder="급한 일을 입력하세요..."></textarea>
+                    <div class="d-day-row regular">
+                        <span class="d-day-label">일반</span>
+                        <div id="regular-d-day-list" class="d-day-list">등록된 일반 일정이 없습니다.</div>
                     </div>
-                    <div class="memo-column">
-                        <h3>완료된일</h3>
-                        <textarea id="done-memo" placeholder="완료된 일을 입력하세요..."></textarea>
+                </div>
+
+                <div id="memo-container-wrapper" class="locked-section" style="position: relative;">
+                    <div id="memo-unlock-overlay" class="section-controls" style="left: 50%;">
+                        <button id="unlock-memo-btn" class="unlock-btn"><i class="fa-solid fa-lock"></i> 잠금해제</button>
+                    </div>
+                    <div id="memo-container" class="memo-grid memo-locked">
+                        <div class="memo-column">
+                            <h3>해야할일</h3>
+                            <textarea id="todo-memo" placeholder="할 일을 입력하세요..."></textarea>
+                        </div>
+                        <div class="memo-column">
+                            <h3>급한일</h3>
+                            <textarea id="urgent-memo" placeholder="급한 일을 입력하세요..."></textarea>
+                        </div>
+                        <div class="memo-column">
+                            <h3>완료된일</h3>
+                            <textarea id="done-memo" placeholder="완료된 일을 입력하세요..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Section (Below Notepad) -->
+                <div id="calendar-section" class="calendar-section">
+                    <div class="calendar-header-sub">
+                        <h3><i class="fa-solid fa-calendar-days"></i> 일정 캘린더</h3>
+                        <div class="calendar-input-group">
+                            <input type="date" id="sched-date">
+                            <input type="text" id="sched-content" placeholder="일정 명칭">
+                            <div class="urgent-toggle">
+                                <input type="checkbox" id="sched-urgent">
+                                <label for="sched-urgent">긴급</label>
+                            </div>
+                            <button id="add-schedule" class="add-btn">등록</button>
+                        </div>
+                    </div>
+                    <div id="calendar-wrapper" class="calendar-wrapper">
+                        <!-- Calendar table will be generated here -->
                     </div>
                 </div>
             </section>

@@ -284,7 +284,7 @@ footer h1 {
 .section-controls {
     position: absolute;
     top: 50%;
-    left: 45%; /* Slightly off center due to right sidebar header */
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
     display: none; /* Only show in locked state */
@@ -410,4 +410,227 @@ footer h1 {
 
 .modal-actions button:hover {
     background: var(--accent-primary);
+}
+
+/* D-Day Display Area Styles */
+.d-day-display-area {
+    margin-bottom: 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+.d-day-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.d-day-row.urgent {
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.d-day-label {
+    min-width: 50px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+}
+
+.urgent .d-day-label {
+    background-color: #ef4444; /* Red for urgent */
+}
+
+.regular .d-day-label {
+    background-color: #3b82f6; /* Blue for regular */
+}
+
+.d-day-list {
+    flex: 1;
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 2px 0;
+}
+
+.d-day-item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    font-weight: 600;
+}
+
+.d-day-item span {
+    color: #ef4444;
+    margin-right: 4px;
+}
+
+/* Calendar Section Styles */
+.calendar-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f1f5f9;
+}
+
+.calendar-header-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-header-sub h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.calendar-input-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.calendar-input-group input[type="date"],
+.calendar-input-group input[type="text"] {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.calendar-input-group input[type="text"] {
+    width: 200px;
+}
+
+.urgent-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ef4444;
+}
+
+.add-btn {
+    background: var(--accent-primary);
+    color: #fff;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+.add-btn:hover {
+    background: #1e40af;
+}
+
+.calendar-wrapper {
+    overflow-x: auto;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.calendar-table th,
+.calendar-table td {
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+    vertical-align: top;
+}
+
+.calendar-table th {
+    background: #f8fafc;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.calendar-day {
+    height: 100px;
+    width: 14.28%;
+    background: #fff;
+}
+
+.calendar-day.today {
+    background: #f0f7ff;
+}
+
+.calendar-day.other-month {
+    background: #fcfcfc;
+    color: #cbd5e1;
+}
+
+.day-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.calendar-event {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-event.ev-urgent {
+    background: #fee2e2;
+    border-left: 2px solid #ef4444;
+    color: #b91c1c;
+}
+
+.calendar-event.ev-regular {
+    background: #dbeafe;
+    border-left: 2px solid #3b82f6;
+    color: #1e40af;
+}
+
+.delete-ev {
+    font-size: 0.6rem;
+    color: #94a3b8;
+    margin-left: 4px;
+}
+
+.delete-ev:hover {
+    color: #ef4444;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .calendar-header-sub {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .calendar-input-group {
+        width: 100%;
+        flex-direction: column;
+    }
+    .calendar-input-group input[type="text"] {
+        width: 100%;
+    }
 }
