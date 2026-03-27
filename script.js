@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Hamom AI Portal v2.9: Strict New Window Mode Active');
 
     // Memo Logic
-    const memoIds = ['todo-memo', 'urgent-memo', 'done-memo'];
+    const memoIds = ['todo-memo', 'urgent-memo', 'done-memo', 'memo-4', 'memo-5', 'memo-6'];
     const saveBtn = document.getElementById('save-memo');
     const lastSavedSpan = document.getElementById('last-saved');
 
