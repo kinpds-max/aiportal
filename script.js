@@ -35,4 +35,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     console.log('Hamom AI Portal v2.9: Strict New Window Mode Active');
+
+    // Memo Logic
+    const memoIds = ['todo-memo', 'urgent-memo', 'done-memo'];
+    const saveBtn = document.getElementById('save-memo');
+
+    // Load saved memos
+    memoIds.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.value = localStorage.getItem(id) || '';
+        }
+    });
+
+    // Save functionality
+    if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+            memoIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    localStorage.setItem(id, element.value);
+                }
+            });
+
+            // Feedback: Show "Saved" state
+            const originalHTML = saveBtn.innerHTML;
+            const originalBG = saveBtn.style.backgroundColor;
+            
+            saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> 저장완료';
+            saveBtn.style.backgroundColor = '#10b981';
+            
+            setTimeout(() => {
+                saveBtn.innerHTML = originalHTML;
+                saveBtn.style.backgroundColor = originalBG;
+            }, 2000);
+        });
+    }
 });
