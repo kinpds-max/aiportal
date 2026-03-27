@@ -327,7 +327,10 @@ footer h1 {
 }
 
 /* Memo Lock Style */
-.memo-locked {
+.memo-locked textarea,
+.memo-locked .d-day-list,
+.memo-locked .calendar-event,
+.memo-locked .calendar-input-group {
     filter: blur(8px);
     pointer-events: none;
     user-select: none;
