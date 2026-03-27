@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const memoContainer = document.getElementById('memo-container');
     const lockMemoBtn = document.getElementById('lock-memo');
 
-    let currentAction = null; // 'initial' or 'memo'
+    let currentAction = null; // 'all', 'education', 'memo'
 
     const openModal = (action, message) => {
         currentAction = action;
@@ -116,17 +116,18 @@ document.addEventListener('DOMContentLoaded', () => {
         passwordInput.value = '';
     };
 
-    const unlockMain = () => {
-        challengeSec.classList.remove('locked-section');
-        challengeSec.classList.add('unlocked-section');
-        educationSec.classList.remove('locked-section');
-        educationSec.classList.add('unlocked-section');
+    const unlockSection = (id) => {
+        const sec = document.getElementById(id);
+        if (sec) {
+            sec.classList.remove('locked-section');
+            sec.classList.add('unlocked-section');
+        }
     };
 
     const unlockMemo = () => {
         memoContainer.classList.remove('memo-locked');
         lockMemoBtn.innerHTML = '<i class="fa-solid fa-unlock"></i> 잠금 (활성)';
-        lockMemoBtn.style.background = '#a855f7'; // Purple-ish to match Antigravity
+        lockMemoBtn.style.background = '#a855f7';
     };
 
     const lockMemo = () => {
@@ -135,13 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
         lockMemoBtn.style.background = '#64748b';
     };
 
-    // Initial state for memo button
+    // Initial state: No modal, just locked state class in HTML
     lockMemo();
 
-    // Initial check on load
-    openModal('initial', '도전 및 교육 섹션에 접근하려면 비밀번호가 필요합니다.');
+    // Section Unlock buttons (Challenge / Education)
+    document.querySelectorAll('.unlock-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const target = btn.getAttribute('data-target');
+            const msg = target === 'all' 
+                ? '준비과정에 접근하려면 비밀번호를 입력하세요. (전체 해제)'
+                : '교육 섹션을 해제하려면 비밀번호를 입력하세요.';
+            openModal(target, msg);
+        });
+    });
 
-    // Lock button click
+    // Lock button click (Memo)
     lockMemoBtn.addEventListener('click', () => {
         if (memoContainer.classList.contains('memo-locked')) {
             openModal('memo', '메모장 잠금을 해제하려면 비밀번호를 입력하세요.');
@@ -154,9 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const handlePasswordSubmit = () => {
         const input = passwordInput.value;
         if (input === CORRECT_PASSWORD) {
-            if (currentAction === 'initial') {
-                unlockMain();
-                alert('비밀번호가 확인되었습니다. 도전/교육 섹션이 활성화됩니다.');
+            if (currentAction === 'all') {
+                unlockSection('challenge-section');
+                unlockSection('education-section');
+                unlockMemo();
+            } else if (currentAction === 'education') {
+                unlockSection('education-section');
             } else if (currentAction === 'memo') {
                 unlockMemo();
             }
@@ -174,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close modal if clicking outside content
     window.addEventListener('click', (e) => {
-        if (e.target === modal && currentAction !== 'initial') {
+        if (e.target === modal) {
             closeModal();
         }
     });
