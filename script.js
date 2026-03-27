@@ -39,6 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Memo Logic
     const memoIds = ['todo-memo', 'urgent-memo', 'done-memo'];
     const saveBtn = document.getElementById('save-memo');
+    const lastSavedSpan = document.getElementById('last-saved');
+
+    // Display last saved time
+    const displayLastSaved = () => {
+        const savedTime = localStorage.getItem('memo-last-saved');
+        if (savedTime && lastSavedSpan) {
+            lastSavedSpan.textContent = `최근 저장: ${savedTime}`;
+        }
+    };
 
     // Load saved memos
     memoIds.forEach(id => {
@@ -47,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             element.value = localStorage.getItem(id) || '';
         }
     });
+    displayLastSaved();
 
     // Save functionality
     if (saveBtn) {
@@ -57,6 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem(id, element.value);
                 }
             });
+
+            // Save timestamp
+            const now = new Date();
+            const timeStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+            localStorage.setItem('memo-last-saved', timeStr);
+            displayLastSaved();
 
             // Feedback: Show "Saved" state
             const originalHTML = saveBtn.innerHTML;

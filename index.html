@@ -176,7 +176,10 @@
             <section class="memo-section">
                 <div class="memo-header">
                     <h2 class="memo-title"><i class="fa-solid fa-note-sticky"></i> 메모장</h2>
-                    <button id="save-memo" class="save-btn"><i class="fa-solid fa-floppy-disk"></i> 저장</button>
+                    <div class="memo-controls" style="display: flex; align-items: center; gap: 1rem;">
+                        <span id="last-saved" class="last-saved-time" style="font-size: 0.75rem; color: var(--text-muted);"></span>
+                        <button id="save-memo" class="save-btn"><i class="fa-solid fa-floppy-disk"></i> 저장</button>
+                    </div>
                 </div>
                 <div class="memo-grid">
                     <div class="memo-column">
